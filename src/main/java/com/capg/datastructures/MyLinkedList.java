@@ -61,6 +61,7 @@ public class MyLinkedList {
 
 	/**
 	 * UC5 Deleting the first element from a linked list
+	 * 
 	 * @return
 	 */
 	public INode pop() {
@@ -70,16 +71,34 @@ public class MyLinkedList {
 	}
 
 	/**
-	 * UC6 Deleting the last element 
+	 * UC6 Deleting the last element
+	 * 
 	 * @return
 	 */
 	public INode poplast() {
 		INode tempNode = head;
-		while(!tempNode.getNext().equals(tail)) {
+		while (!tempNode.getNext().equals(tail)) {
 			tempNode = tempNode.getNext();
 		}
 		this.tail = tempNode;
 		tempNode = tempNode.getNext();
 		return tempNode;
+	}
+
+	/**
+	 * UC7 Searching the required node
+	 * 
+	 * @param searchNode
+	 */
+	public String searchNode(INode searchNode) {
+		INode tempNode = head;
+		String returnString = "Node not found";
+		while (tempNode != null && tempNode.getNext() != null) {
+			if (tempNode.getKey() == searchNode.getKey()) {
+				returnString = "Node found";
+			}
+			tempNode = tempNode.getNext();
+		}
+		return returnString;
 	}
 }
