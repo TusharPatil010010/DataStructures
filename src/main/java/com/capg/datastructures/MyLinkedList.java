@@ -58,4 +58,14 @@ public class MyLinkedList {
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
 	}
+
+	/**
+	 * UC5 Deleting the first element from a linked list
+	 * @return
+	 */
+	public INode deleteFirst() {
+		INode tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
+	}
 }
