@@ -90,8 +90,9 @@ public class MyLinkedListTest {
 		myLinkedList.append(myFirstNode);
 		myLinkedList.append(mySecondNode);
 		myLinkedList.append(myThirdNode);
-		String value = myLinkedList.searchNode(mySecondNode);
-
-		assertEquals("Node found", value);
+		myLinkedList.searchNode(mySecondNode);
+		
+		boolean result = mySecondNode.getKey() == 30;
+		assertTrue(result);
 	}
 }

@@ -6,8 +6,8 @@ public class MyNode<K> implements INode<K>{
 	private INode next;
 
 	public MyNode(K key) {
-		this.key = null;
-		this.setNext(null);
+		this.key = key;
+		this.setNext(next);
 	}
 
 	public INode getNext() {

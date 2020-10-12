@@ -90,15 +90,26 @@ public class MyLinkedList {
 	 * 
 	 * @param searchNode
 	 */
-	public String searchNode(INode searchNode) {
+//	public String searchNode(INode searchNode) {
+//		INode tempNode = head;
+//		String returnString = "Node not found";
+//		while (tempNode != null && tempNode.getNext() != null) {
+//			if (tempNode.getKey() == searchNode.getKey()) {
+//				System.out.println(searchNode.getKey());
+//				returnString = "Node found";
+//			}
+//			tempNode = tempNode.getNext();
+//		}
+//		return returnString;
+//	}
+    	public void searchNode(INode searchNode) {
 		INode tempNode = head;
-		String returnString = "Node not found";
-		while (tempNode != null && tempNode.getNext() != null) {
+		while (!tempNode.equals(tail)) {
 			if (tempNode.getKey() == searchNode.getKey()) {
-				returnString = "Node found";
+				System.out.println("Node found " + searchNode.getKey());
+				return;
 			}
 			tempNode = tempNode.getNext();
 		}
-		return returnString;
 	}
 }
