@@ -38,7 +38,7 @@ public class MyLinkedListTest {
 		myLinkedList.insert(myFirstNode, mySecondNode);// Inserting second node between first and third
 
 		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
-				&& myLinkedList.tail.equals(myThirdNode);
+						 && myLinkedList.tail.equals(myThirdNode);
 
 		assertTrue(result);
 	}
