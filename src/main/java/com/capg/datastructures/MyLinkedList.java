@@ -92,6 +92,7 @@ public class MyLinkedList {
 	 */
 
 	public void searchNode(INode searchNode) {
+		System.out.println("Search Node");
 		INode tempNode = head;
 		while (!tempNode.equals(tail)) {
 			if (tempNode.getKey() == searchNode.getKey()) {
@@ -109,6 +110,7 @@ public class MyLinkedList {
 	 * @param newNode
 	 */
 	public void insertNode(INode myNode, INode newNode) {
+		System.out.println("Insert Node");
 		INode tempNode = head;
 		while (!tempNode.getNext().equals(myNode)) {
 			tempNode = tempNode.getNext();
@@ -119,5 +121,39 @@ public class MyLinkedList {
 		System.out.println(myNode.getKey());
 		System.out.println(newNode.getKey());
 		System.out.println(newNode.getNext().getKey());
+	}
+
+	/**
+	 * Returns the size of Linked List
+	 * 
+	 * @return
+	 */
+	public int size() {
+		INode tempNode = head;
+		int count = 1;
+		while (!tempNode.equals(tail)) {
+			count++;
+			tempNode = tempNode.getNext();
+		}
+		System.out.println("Size of Linked List : " + count);
+		return count;
+	}
+
+	/**
+	 * UC9 Deleting a node from a given position
+	 * 
+	 * @param deletingNode
+	 */
+	public void deleteNode(INode deletingNode) {
+		System.out.println("Delete Node");
+		INode tempNode = head;
+		INode prevNode = null;
+		while (!tempNode.getKey().equals(deletingNode.getKey())) {
+			prevNode = tempNode;
+			tempNode = tempNode.getNext();
+		}
+		prevNode.setNext(tempNode.getNext());
+		System.out.println(prevNode.getKey());
+		System.out.println(prevNode.getNext().getKey());
 	}
 }

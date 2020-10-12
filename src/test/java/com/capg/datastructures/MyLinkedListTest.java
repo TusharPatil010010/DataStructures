@@ -114,4 +114,25 @@ public class MyLinkedListTest {
 				 		 && myLinkedList.head.getNext().getNext().equals(myInsertingNode) && myLinkedList.tail.equals(myThirdNode);
 		assertTrue(result);
 	}	
+	
+	@Test
+	public void givenNumbers_whenDeletingFromLinkedList_shouldBeDeletedFromGivenPosition() {
+		
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyNode<Integer> mydeletingNode = new MyNode<>(40);
+		
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(mydeletingNode);
+		myLinkedList.append(myThirdNode);
+		
+		myLinkedList.deleteNode(mydeletingNode);
+		myLinkedList.size();
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
+						 && myLinkedList.tail.equals(myThirdNode);
+		assertTrue(result);
+	}	
 }
