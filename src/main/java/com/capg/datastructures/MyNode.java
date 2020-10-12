@@ -20,13 +20,11 @@ public class MyNode<K> implements INode<K>{
 
 	@Override
 	public K getKey() {
-		// TODO Auto-generated method stub
 		return key;
 	}
 
 	@Override
 	public void setKey(K key) {
-		// TODO Auto-generated method stub
 		this.key = key;
 	}
 }
