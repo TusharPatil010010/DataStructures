@@ -20,7 +20,7 @@ public class MyLinkedListTest {
 		myLinkedList.append(myThirdNode);
 
 		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
-				&& myLinkedList.tail.equals(myThirdNode);
+						 && myLinkedList.tail.equals(myThirdNode);
 
 		assertTrue(result);
 	}
@@ -95,4 +95,23 @@ public class MyLinkedListTest {
 		boolean result = mySecondNode.getKey() == 30;
 		assertTrue(result);
 	}
+	
+	@Test
+	public void givenNumbers_whenInsertingInLinkedList_shouldBeInsertedAtGivenPosition() {
+
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyNode<Integer> myInsertingNode = new MyNode<>(40);
+
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		
+		myLinkedList.insertNode(mySecondNode,myInsertingNode);
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				 		 && myLinkedList.head.getNext().getNext().equals(myInsertingNode) && myLinkedList.tail.equals(myThirdNode);
+		assertTrue(result);
+	}	
 }

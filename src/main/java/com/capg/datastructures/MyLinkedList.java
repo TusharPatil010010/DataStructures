@@ -90,19 +90,8 @@ public class MyLinkedList {
 	 * 
 	 * @param searchNode
 	 */
-//	public String searchNode(INode searchNode) {
-//		INode tempNode = head;
-//		String returnString = "Node not found";
-//		while (tempNode != null && tempNode.getNext() != null) {
-//			if (tempNode.getKey() == searchNode.getKey()) {
-//				System.out.println(searchNode.getKey());
-//				returnString = "Node found";
-//			}
-//			tempNode = tempNode.getNext();
-//		}
-//		return returnString;
-//	}
-    	public void searchNode(INode searchNode) {
+
+	public void searchNode(INode searchNode) {
 		INode tempNode = head;
 		while (!tempNode.equals(tail)) {
 			if (tempNode.getKey() == searchNode.getKey()) {
@@ -111,5 +100,24 @@ public class MyLinkedList {
 			}
 			tempNode = tempNode.getNext();
 		}
+	}
+
+	/**
+	 * UC8 Inserting the element at desired position
+	 * 
+	 * @param myNode
+	 * @param newNode
+	 */
+	public void insertNode(INode myNode, INode newNode) {
+		INode tempNode = head;
+		while (!tempNode.getNext().equals(myNode)) {
+			tempNode = tempNode.getNext();
+		}
+		tempNode = tempNode.getNext().getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
+		System.out.println(myNode.getKey());
+		System.out.println(newNode.getKey());
+		System.out.println(newNode.getNext().getKey());
 	}
 }
