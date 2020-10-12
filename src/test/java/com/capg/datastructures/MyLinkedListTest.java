@@ -53,11 +53,30 @@ public class MyLinkedListTest {
 		myLinkedList.append(myFirstNode);
 		myLinkedList.append(mySecondNode);
 		myLinkedList.append(myThirdNode);
-		myLinkedList.deleteFirst();
+		myLinkedList.pop();
 
 		boolean result = myLinkedList.head.equals(mySecondNode)
 						 && myLinkedList.tail.equals(myThirdNode);
 
+		assertTrue(result);
+	}
+	
+	@Test
+	public void givenNumbers_whenDeletedLastFromLinkedList_shouldChangeTailToThePreviousPosition() {
+		
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.poplast();
+		
+		boolean result = myLinkedList.head.equals(myFirstNode)
+				&& myLinkedList.tail.equals(mySecondNode);
+		
 		assertTrue(result);
 	}
 }

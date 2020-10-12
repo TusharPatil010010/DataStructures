@@ -63,9 +63,23 @@ public class MyLinkedList {
 	 * UC5 Deleting the first element from a linked list
 	 * @return
 	 */
-	public INode deleteFirst() {
+	public INode pop() {
 		INode tempNode = this.head;
 		this.head = head.getNext();
+		return tempNode;
+	}
+
+	/**
+	 * UC6 Deleting the last element 
+	 * @return
+	 */
+	public INode poplast() {
+		INode tempNode = head;
+		while(!tempNode.getNext().equals(tail)) {
+			tempNode = tempNode.getNext();
+		}
+		this.tail = tempNode;
+		tempNode = tempNode.getNext();
 		return tempNode;
 	}
 }
