@@ -12,17 +12,17 @@ public class MyLinkedList {
 
 	/**
 	 * UC2 Adding elements in a Linked List
+	 * 
 	 * @param newNode
 	 */
 	public void add(INode newNode) {
-		
-		if(this.tail == null) {
+
+		if (this.tail == null) {
 			this.tail = newNode;
 		}
-		if(this.head == null) {
+		if (this.head == null) {
 			this.head = newNode;
-		}
-		else {
+		} else {
 			INode tempNode = this.head;
 			this.head = newNode;
 			this.head.setNext(tempNode);
@@ -31,20 +31,31 @@ public class MyLinkedList {
 
 	/**
 	 * UC3 Appending elements in a Linked List
+	 * 
 	 * @param newNode
 	 */
 	public void append(INode newNode) {
 
-		if(this.head == null) {
+		if (this.head == null) {
 			this.head = newNode;
 		}
-		if(this.tail == null) {
+		if (this.tail == null) {
 			this.tail = newNode;
-		}
-		else {
+		} else {
 			this.tail.setNext(newNode);
 			this.tail = newNode;
 		}
-		
+	}
+
+	/**
+	 * UC4 Inserting elements between two nodes
+	 * 
+	 * @param myNode
+	 * @param newNode
+	 */
+	public void insert(INode myNode, INode newNode) {
+		INode tempNode = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
 	}
 }
